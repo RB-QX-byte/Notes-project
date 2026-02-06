@@ -1,0 +1,25 @@
+{
+  "name": "backend-for-notes-app",
+  "version": "1.0.0",
+  "description": "This is the backend for the notes app, I have used normal express.js for the backend and mongoose for the database",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "notes-app",
+    "backend",
+    "express.js",
+    "mongoose",
+    "mongodb"
+  ],
+  "author": "Rachit A Borkar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.0.2"
+  }
+}
