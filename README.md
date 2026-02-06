@@ -3,8 +3,8 @@
 A production-quality full-stack web application that enables multiple users to collaborate on notes in real-time, featuring secure authentication, role-based access control (RBAC), and activity tracking.
 
 ## Live Demo
-- **Frontend:** [Coming Soon]
-- **Backend API:** [Coming Soon]
+- **Frontend:** 
+- **Backend API:** 
 
 ## Features
 - **Secure Authentication** - JWT-based login/signup
