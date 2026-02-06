@@ -18,6 +18,9 @@
   ],
   "author": "Rachit A Borkar",
   "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0 <=20.x"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "better-sqlite3": "^12.6.2",
