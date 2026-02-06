@@ -30,7 +30,7 @@ const AddEditNotes = () => {
             <div className="mt-3">
                 <label className="input-label">TAGS</label>
             </div>
-  
+
             <button className="btn-primary font-medium mt-5" onClick={() => { }}></button>
         </div>
     )
