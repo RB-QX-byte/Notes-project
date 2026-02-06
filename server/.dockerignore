@@ -1,0 +1,40 @@
+# Dependencies (installed in container)
+node_modules/
+.pnp
+.pnp.js
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Development
+coverage/
+.nyc_output/
+
+# Database (mounted as volume)
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Docs
+*.md

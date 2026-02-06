@@ -1,0 +1,16 @@
+# ================================
+# Railway Configuration for Client
+# Deploy this in the client directory
+# Note: For frontend, consider using Vercel instead
+# ================================
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+numReplicas = 1
+healthcheckPath = "/"
+healthcheckTimeout = 30
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3

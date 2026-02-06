@@ -1,0 +1,78 @@
+# ================================
+# Docker Compose for Notes App
+# Use for local development and testing
+# For Railway: Deploy services separately
+# ================================
+
+services:
+  # ============================================
+  # Backend API Server (Express + SQLite)
+  # ============================================
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: notes-server
+    restart: unless-stopped
+    ports:
+      - "${SERVER_PORT:-8000}:8000"
+    volumes:
+      # Persist SQLite database
+      - server-data:/app/data
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORT=8000
+      - JWT_SECRET=${JWT_SECRET:-your-super-secret-jwt-key}
+      - CORS_ORIGIN=${CORS_ORIGIN:-http://localhost}
+    healthcheck:
+      test: [ "CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8000/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - app-network
+
+  # ============================================
+  # Frontend Client (Vite + React + Nginx)
+  # ============================================
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=${VITE_API_URL:-http://localhost:8000}
+        - VITE_SOCKET_URL=${VITE_SOCKET_URL:-http://localhost:8000}
+    container_name: notes-client
+    restart: unless-stopped
+    ports:
+      - "${CLIENT_PORT:-80}:80"
+    depends_on:
+      server:
+        condition: service_healthy
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - app-network
+
+# ============================================
+# Volumes for persistent data
+# ============================================
+volumes:
+  server-data:
+    driver: local
+
+# ============================================
+# Network configuration
+# ============================================
+networks:
+  app-network:
+    driver: bridge

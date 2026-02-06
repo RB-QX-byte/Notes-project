@@ -35,6 +35,15 @@ app.get("/", (req, res) => {
     });
 });
 
+// Health check for Docker/Railway
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        status: "healthy",
+        uptime: process.uptime(),
+        timestamp: new Date().toISOString()
+    });
+});
+
 // API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/notes", notesRoutes);

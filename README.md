@@ -2,20 +2,20 @@
 
 A production-quality full-stack web application that enables multiple users to collaborate on notes in real-time, featuring secure authentication, role-based access control (RBAC), and activity tracking.
 
-## 🚀 Live Demo
+## Live Demo
 - **Frontend:** [Coming Soon]
 - **Backend API:** [Coming Soon]
 
-## ✨ Features
-- 🔐 **Secure Authentication** - JWT-based login/signup
-- 📝 **Notes CRUD** - Create, edit, delete, pin notes
-- 👥 **Real-Time Collaboration** - Live editing with Socket.IO
-- 🔍 **Search** - Search notes by title and content
-- 🔗 **Shareable Links** - Public read-only note sharing
-- 📊 **Activity Logs** - Track all user actions
-- 🎨 **Role-Based Access** - Owner, Editor, Viewer permissions
+## Features
+- **Secure Authentication** - JWT-based login/signup
+- **Notes CRUD** - Create, edit, delete, pin notes
+- **Real-Time Collaboration** - Live editing with Socket.IO
+- **Search** - Search notes by title and content
+- **Shareable Links** - Public read-only note sharing
+- **Activity Logs** - Track all user actions
+- **Role-Based Access** - Owner, Editor, Viewer permissions
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|------------|
@@ -26,7 +26,7 @@ A production-quality full-stack web application that enables multiple users to c
 | Auth | JWT (jsonwebtoken) |
 | Password | bcryptjs |
 
-## 📁 Project Structure
+## Project Structure
 ```
 Notes/
 ├── client/                 # React frontend
@@ -47,7 +47,7 @@ Notes/
 └── README.md
 ```
 
-## 🔧 Setup Instructions
+## Setup Instructions
 
 ### Prerequisites
 - Node.js 18+
@@ -75,7 +75,7 @@ npm install
 npm run dev
 ```
 
-## 🌍 Environment Variables
+## Environment Variables
 
 ### Backend (.env)
 | Variable | Description | Default |
@@ -90,7 +90,7 @@ npm run dev
 | `VITE_API_URL` | Backend API URL | http://localhost:8000/api |
 | `VITE_SOCKET_URL` | Socket.IO URL | http://localhost:8000 |
 
-## 📡 API Documentation
+## API Documentation
 
 ### Authentication
 | Method | Endpoint | Description |
@@ -123,7 +123,7 @@ npm run dev
 |--------|----------|-------------|
 | GET | `/api/notes/:id/activity` | Get activity log |
 
-## 🗄 Database Schema
+## Database Schema
 
 ```sql
 -- Users
@@ -175,7 +175,7 @@ CREATE TABLE activity_logs (
 );
 ```
 
-## 🔌 Socket.IO Events
+## Socket.IO Events
 
 ### Client → Server
 - `join-note` - Join a note room
@@ -190,7 +190,7 @@ CREATE TABLE activity_logs (
 - `online-users` - List of online users
 - `user-typing` - Typing indicator
 
-## 🏗 Architecture
+## Architecture
 
 ```
 ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
@@ -203,5 +203,5 @@ CREATE TABLE activity_logs (
               (WebSocket)
 ```
 
-## 📄 License
+## License
 MIT
