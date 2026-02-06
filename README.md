@@ -1,19 +1,19 @@
-# Real-Time Collaborative Notes Application
+# Notes App - Real-Time Collaboration
 
-A production-quality full-stack web application that enables multiple users to collaborate on notes in real-time, featuring secure authentication, role-based access control (RBAC), and activity tracking.
+A full-stack notes application I built to learn real-time features with Socket.IO. Users can create, edit, and share notes with others, with live updates as you type.
 
 ## Live Demo
-- **Frontend:** 
-- **Backend API:** 
+- **Frontend:** (Coming soon)
+- **Backend API:** https://notes-project-aqvs.onrender.com 
 
-## Features
-- **Secure Authentication** - JWT-based login/signup
-- **Notes CRUD** - Create, edit, delete, pin notes
-- **Real-Time Collaboration** - Live editing with Socket.IO
-- **Search** - Search notes by title and content
-- **Shareable Links** - Public read-only note sharing
-- **Activity Logs** - Track all user actions
-- **Role-Based Access** - Owner, Editor, Viewer permissions
+## What it does
+- User authentication with JWT tokens
+- Create, edit, and delete notes
+- Real-time collaboration using Socket.IO
+- Search through your notes
+- Share notes with a public link
+- Track activity history
+- Different permission levels (owner, editor, viewer)
 
 ## Tech Stack
 
@@ -47,33 +47,35 @@ Notes/
 └── README.md
 ```
 
-## Setup Instructions
+## How to Run Locally
 
 ### Prerequisites
-- Node.js 18+
-- npm or yarn
+- Node.js 18 or higher
+- npm
 
-### Backend Setup
+### Backend
 ```bash
 cd server
 npm install
 
-# Create .env file
+# Set up environment variables
 echo "PORT=8000" > .env
-echo "JWT_SECRET=your-secret-key-here" >> .env
+echo "JWT_SECRET=your-secret-key" >> .env
 
-# Start server
+# Run the server
 npm run dev
 ```
 
-### Frontend Setup
+### Frontend
 ```bash
 cd client
 npm install
-
-# Start development server
 npm run dev
 ```
+
+The app should now be running:
+- Frontend: http://localhost:5173
+- Backend: http://localhost:8000
 
 ## Environment Variables
 

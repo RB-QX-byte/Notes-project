@@ -7,7 +7,6 @@ import authRoutes from "./routes/auth.js";
 import notesRoutes from "./routes/notes.js";
 import initializeSocket from "./socket/index.js";
 
-// Load environment variables
 dotenv.config();
 
 const app = express();
@@ -18,11 +17,10 @@ const io = initializeSocket(httpServer);
 
 const port = process.env.PORT || 8000;
 
-// Middleware
 app.use(express.json());
 app.use(
     cors({
-        origin: "*",
+        origin: "*", // TODO: restrict this in production
     })
 );
 

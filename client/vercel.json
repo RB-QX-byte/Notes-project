@@ -8,6 +8,12 @@
     "installCommand": "npm ci",
     "devCommand": "npm run dev -- --port $PORT",
     "public": true,
+    "build": {
+        "env": {
+            "VITE_API_URL": "https://notes-project-aqvs.onrender.com/api",
+            "VITE_SOCKET_URL": "https://notes-project-aqvs.onrender.com"
+        }
+    },
     "rewrites": [
         {
             "source": "/((?!api/).*)",
